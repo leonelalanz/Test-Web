@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/feed">Synergy</a>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item active">
+      <button type="button" ng-click="logout()" class="nav-link btn">Cerrar sesión</button>
+    </li>
+  </ul>
+</nav>
+<div class="container">
+  <div class="h1 feed-title">Feed</div>
+  <div class="row">
+    <div class="col-md-3" ng-repeat="post in posts">
+      <div class="card" style="margin-bottom: 15px">
+        <img src="{{post.thumbnailUrl}}" alt="" style="width: 100%">
+        <div class="card-body">
+          <h4 class="card-title">{{post.title}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
