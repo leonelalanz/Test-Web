@@ -1,6 +1,5 @@
 html,
 body,
-.wrap,
 .full-height{
   height: 100%;
 }
@@ -8,6 +7,8 @@ body,
 .login{
   background: url('../assets/images/background.jpg') center center;
   background-size: cover;
+  min-height: 100%;
+  overflow-y: auto;
 }
 
 .sign-in-container{
@@ -27,4 +28,9 @@ body,
   margin-bottom: 20px;
   padding-bottom: 15px;
   border-bottom: 1px solid #eee;
+}
+
+.dropdown-type-text{
+  width: 80%;
+  display: inline-block;
 }
