@@ -1,0 +1,34 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  background-image: url("/assets/images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center center;
+  height: 100vh;
+  width: 100%;
+}
+
+.main .box {
+  max-height: 350px;
+  height: 300px;
+  width: 45%;
+  max-width: 762px;
+  background-color: #ffffff7a;
+}
+
+.form-control:hover {
+  border: #0069d9 2px solid;
+}
+
+.primary {
+  background: #7bbafa;
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #7bbafa), color-stop(49%, #0069d9), color-stop(100%, #7bbafa));
+  background: -webkit-gradient(linear, left top, left bottom, from(#7bbafa), color-stop(49%, #0069d9), to(#7bbafa));
+  background: linear-gradient(to bottom, #7bbafa 0%, #0069d9 49%, #7bbafa 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7bbafa', endColorstr='#7bbafa', GradientType=0);
+}
+/*# sourceMappingURL=styles.css.map */
