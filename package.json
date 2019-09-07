@@ -10,15 +10,23 @@
     "type": "git",
     "url": "git+https://github.com/SYNERGY-GB/Test-Web.git"
   },
-  "author": "",
+  "author": "Dariana",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/SYNERGY-GB/Test-Web/issues"
   },
   "homepage": "https://github.com/SYNERGY-GB/Test-Web#readme",
   "devDependencies": {
-    "grunt": "^1.0.1",
+    "grunt": "^1.0.4",
     "grunt-contrib-connect": "^1.0.2",
-    "grunt-contrib-watch": "^1.0.0"
+    "grunt-contrib-watch": "^1.1.0"
+  },
+  "keywords": [
+    "gruntjs"
+  ],
+  "dependencies": {
+    "angular": "^1.2.32",
+    "angular-animate": "^1.7.8",
+    "angular-ui-bootstrap": "^2.5.6"
   }
 }
