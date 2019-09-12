@@ -1,0 +1,35 @@
+<div class="container-fluid login">
+  <div class="d-flex align-items-start flex-column full-height">
+    <div class="mb-auto" style="height: 157px"></div>
+    <div class="sign-in-container card">
+      <div class="card-body">
+        <h2 class="card-title">Iniciar Sesión</h2>
+        <form  novalidate (submit)="onSubmit()" id="form">
+          <select id="select-login" class="custom-select">
+            <option selected>Seleccione</option>
+            <option value="V">V</option>
+            <option value="E">E</option>
+            <option value="P">P</option>
+          </select>
+          <div class="form-group">
+            <input type="text" class="form-control" id="usuario" placeholder="Usuario" [(ngModel)]="username" />
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="password" placeholder="Contraseña" [(ngModel)]="password" />
+          </div>
+          <div class="form-group">
+            <a href="#">¿Olvidó su contraseña?</a>
+          </div>
+          <div class="form-group text-center">
+              <a class="btn btn-primary"routerLink="/dashboard">Aceptar</a>
+
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="text-right mt-auto" style="width: 100%">
+      <img src="../../assets/logo.png" alt="">
+    </div>
+  </div>
+</div>
+

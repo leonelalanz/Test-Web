@@ -1,0 +1,44 @@
+html,
+body,
+.full-height{
+  height: 100%;
+}
+
+.login{
+ background: url('../../assets/background.jpg') center center;
+  background-size: cover;
+  min-height: 100%;
+  overflow-y: auto;
+}
+
+form{
+  width: 450px
+}
+
+select{
+  width: 130px;
+  margin: 0px 0px 0px 319px
+}
+.sign-in-container{
+  background: rgba(255, 255, 255, .7);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.form-dropdown .btn{
+  width: 120px;
+  color: #333;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.feed-title{
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-type-text{
+  width: 80%;
+  display: inline-block;
+}
