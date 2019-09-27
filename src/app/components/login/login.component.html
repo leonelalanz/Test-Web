@@ -1,0 +1,54 @@
+<body>
+<div class="container-fluid">
+    <div class="row rowtop"></div>
+    <div class="row justify-content-start">
+      <div class="col-4">
+        <div class="card cardopacity">
+          <br>
+          <h5 class="card-title cardtitle">Inicio de Sesión </h5>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit(template)">
+            <div class="form-group">
+              <select placeholder="Seleccione" class="custom-select myselect" formControlName="type">
+                <option value="" disabled selected>Seleccione</option>
+                <option value="V">V</option>
+                <option value="E">E</option>
+                <option value="P">P</option>
+              </select>
+            </div>
+            <div class="form-group inputs">
+              <input type="text" class="form-control" formControlName="username" id="usuario" placeholder="Usuario">
+            </div>
+            <div class="form-group inputs">
+              <input type="password" class="form-control" formControlName="password" id="clave" placeholder="Contraseña">
+              <p (click)="alert()" class="alert">¿Olvidó su contraseña?</p> 
+            </div>     
+            <div class="mx-auto" style="width: 30%;">
+              <button class="btn btn-primary" type="submit">Aceptar</button>
+            </div>
+          </form>
+          &nbsp;
+        </div>
+        <div class="align-rigth">
+          <div class="bottom"></div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+  <!--Modal-->
+  <ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title ">Login</h4>
+      <button type="button" class="close pull-right" 
+              aria-label="Close" (click)="modalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+  <div class="modal-body">
+      {{messageModal}}
+  </div>
+  </ng-template>
+
+</body>

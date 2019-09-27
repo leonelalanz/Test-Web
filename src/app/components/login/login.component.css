@@ -1,0 +1,41 @@
+body {
+    background-image: url('../../../assets/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.rowtop {
+    height: 9em;
+}
+
+.bottom{
+    height: 7.95em;
+}
+
+.alert {
+    cursor: pointer;
+    margin-left: 0%;
+    color: #3880ff;
+}
+
+.myselect {
+    width: 50%;
+    margin-left: 47%;
+    
+}
+
+.cardtitle{
+    margin-left: 7%;
+}
+
+
+.inputs{
+    padding-right: 3%;
+    padding-left: 3%;
+
+}
+
+.cardopacity {
+    background-color: rgb(255, 255, 255, .7)
+}
