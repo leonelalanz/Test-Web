@@ -1,9 +1,23 @@
 <html>
-  <head>
-    <script src="//localhost:35729/livereload.js"></script>
-  </head>
-  <body>
-    <h1> Grunt is running! </h1>
-    <h2> :) </h2>
-  </body>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="src/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="src/css/style.css" rel="stylesheet" />
+		
+		<script src="//localhost:35729/livereload.js"></script>
+		<script src="src/js/angular.js"></script>
+		<script src="src/js/angular-route.js"></script>
+		<script src="src/js/dirPagination.js"></script>
+		<script src="src/js/jquery-2.1.1.min.js"></script>
+		<script src="src/bootstrap/js/popper.min.js"></script>
+		<script src="src/bootstrap/js/bootstrap.min.js"></script>
+		<script src="src/js/functionjquery.js"></script>
+		<script src="src/app.js"></script>
+	</head>
+	<body ng-app="App">
+		<div class="page {{ pageClass }}" ng-view>
+		</div>
+	</body>
 </html>

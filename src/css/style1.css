@@ -1,0 +1,25 @@
+body  {
+	position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+	background: center no-repeat url(../assets/images/background.jpg);
+}
+
+#forlog{
+	position: fixed;
+    left: 0;
+    top: 20%;
+    right: 0;
+    bottom: 20%;
+	background: white;
+	width: 40%;
+	opacity: 0.7;
+	text-align:center;
+}
+
+#forlog h3{
+	position: fixed;
+	left: 25;
+}

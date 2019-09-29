@@ -1,0 +1,62 @@
+<section id="wrapper" class="login-register login-sidebar"  
+		style="background-image:url(../assets/images/b1.jpg); ">
+			<div class="login-box card">
+				<div class="card-body">
+					<form class="form-horizontal form-material" id="loginform">
+						<h3 class="box-title m-b-20">Inicio de Sesión</h3>
+						<div class="form-group has-success"style="text-align:right;">
+							<div class="col-xs-8" style="">
+								<div class="btn-group">
+									<button type="button"  class="btn btn-secondary form-control custom-select" id="type" style="width: 160px">Seleccione...
+									</button>
+									<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<span class="sr-only">Toggle Dropdown</span>
+									</button>
+									<div class="dropdown-menu" x-placement="top-start" style="position: absolute; transform: translate3d(63px, -197px, 0px); top: 0px; left: 0px; will-change: transform;">
+										<a class="dropdown-item" onclick="selectedType('V')" id="V" href="javascript:void(0)">Venezolano</a>
+										<a class="dropdown-item" onclick="selectedType('E')" id="E" href="javascript:void(0)">Extranjero</a>
+										<a class="dropdown-item" onclick="selectedType('P')" id="P" href="javascript:void(0)">Pasaporte</a>
+									</div>                                        
+								</div>
+							</div>
+						</div>
+						<div class="form-group has-success m-t-25">
+							<div class="col-xs-12">
+								<input class="form-control" type="text" ng-model="data.username" id="usr"  placeholder="Usuario">
+							</div>
+						</div>
+						<div class="form-group has-success">
+							<div class="col-xs-12">
+								<input class="form-control" type="password" ng-model="data.password" id="pswd" placeholder="Contraseña">
+							</div>
+						</div>
+						<a  onclick="forgotPwd();" href="javascript:void(0)" id="to-recover" >
+							<i>¿Olvidó su contraseña?</i>
+						</a> 
+					</form>
+					<div class="form-group text-center m-t-20">
+						<div class="col-xs-12">
+							<button class="btn btn-info" onclick="sendData();">
+								Aceptar
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="" class="modal">
+				<div class="modal-dialog" style="margin-top:12%;">
+					<div class="modal-content">
+						<div class="modal-header">
+							
+						</div>
+						<div class="contenido_modal" style="text-align:center;font-size: 17px; padding-top:3%; width:100%">
+							
+						</div>
+						<div class="modal-footer" style="">
+							 
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>

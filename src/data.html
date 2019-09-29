@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Testing</h4>
+        <h6 class="card-subtitle">Web Service</h6>		
+		
+		<div class="form-group col-md-4" style="float: left;">
+            <input type="text" class="form-control" ng-model="search" style="border-left:none; border-right:none; border-top:none;border-radius:0px;"  placeholder="Buscar"> 
+		</div>
+		
+		<div class="button-group col-md-8" style="float: right; text-align:right">
+            <button ng-click="logout();" type="button" class="btn waves-effect waves-light btn-outline-secondary">Salir</button>
+        </div>		
+		
+        <div class="table-responsive m-t-40">
+            <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+					<th>Id</th>
+					<th>Title</th>			
+					<th>Thumbnail</th>
+					<th>Url</th>
+                </thead>
+                
+                <tbody>
+					<tr dir-paginate="data in listarData |orderBy:sortKey:reverse| filter: search|itemsPerPage:2">
+						<td>{{data.id}}</td>
+						<td>{{data.title}}</td>
+						<td>{{data.thumbnailUrl}}</td>
+						<td>{{data.url}}</td>
+					</tr>
+                </tbody>
+            </table>
+			<dir-pagination-controls
+				max-size="2"
+				direction-links="true"
+				boundary-links="true" class="dataTables_paginate paging_simple_numbers">
+			</dir-pagination-controls>
+        </div>
+    </div>
+</div>
