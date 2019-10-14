@@ -1,9 +1,83 @@
-<html>
+<html ng-app="app">
   <head>
     <script src="//localhost:35729/livereload.js"></script>
+    <link rel="stylesheet" type="text/css" href="../bootstrap-4.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../assets/js/angular.js"></script>
+     <script type="text/javascript" src="../assets/js/angular_route.min.js"></script>
+    <script type="text/javascript" src="../assets/js/app.js"></script>
+    <meta charset="utf-8">
   </head>
-  <body>
-    <h1> Grunt is running! </h1>
-    <h2> :) </h2>
+  <body ng-controller="controlador as login">
+    <div class="row login">
+      <div class="form">
+        <div class="col-sm-12 p-3">
+          <div class="col-sm-10 offset-2 test">
+          <h4>Inicio de Sesión</h4>
+          <form class="form-horizontal" ng-submit="login.ingresar()" method="post" >
+            <div class="col-sm-5 offset-7 test">
+              <select class="form-control" ng-model="login.tipo" placeholder="Seleccione" required>
+              <option>
+                Seleccione
+              </option>
+              <option value="V">
+                V
+              </option>
+              <option vlaue="E">
+                E
+              </option>
+              <option value="P">
+                P
+              </option>
+            </select>
+            </div>
+            <input type="text" ng-model="login.username" placeholder="Usuario" class="form-control login_input">
+            <input type="password" placeholder="contraseña" class="form-control login_input" ng-model="login.password" >
+            <span class="subtitle" id="resetpass" ng-click="login.resetpass()"> Olvido su contraseña?</span>
+            <div class="col-sm-5 offset-4 test">
+              <button type="submit" class="btn btn-info" ><a href="#timeline">Aceptar</a></button>
+            </div>
+          </form>
+         </div>
+         <div ng-view></div>
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  Porfavor llena los siguientes campos
+                  <button type="button" class="close cerrarModal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  
+                </div>
+                <div class="modal-body">
+                  <li ng-show="!login.username">
+                  <span >Usuario</span></li>
+                  <li ng-show="!login.password">
+                  <span >Contraseña</span></li>
+                  <li ng-show="!login.tipo">
+                  <span >tipo</span></li>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>  <!-- Ends Modal -->
+
+        </div>
+      </div>
+  </div>
+  <script type="text/javascript" src="../bootstrap-4.3.1/dist/js/bootstrap.min.js"></script>
   </body>
+  <footer>
+    <div >
+      <div class="col-sm-3 offset-7">
+        <img src="../assets/images/synergy-gb.png">
+      </div>
+    </div>
+  </footer>
+ 
 </html>
+
+

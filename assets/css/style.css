@@ -1,0 +1,75 @@
+body{
+	background-image: url("../images/background.jpg"),linear-gradient(to bottom, #ADB2B6, #ABAEB3);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+	background-size: 90% 100%;
+        -moz-background-size: cover;
+        -webkit-background-size: 90% 100%;
+        -o-background-size: cover;
+}
+
+body:before{
+	content:"";
+	width:100%;
+	min-height: 100vh;
+	position:absolute;
+	top:0;
+	left:0;
+	background: linear-gradient(transparent,#fff);
+	opacity: 0.84;
+	display: flex;
+	align-items: center
+}
+.test{
+	border:1px solid transparent;
+	width:600px;
+}
+/**ESTILOS GENERALES DENTRO DEL BODY*/
+a{
+	color:#ffffff;
+}
+.login_input{
+	margin-top:10px;
+}
+.btn{
+	width:120px;
+	padding:10px;
+}
+.login{
+width:100%;
+	margin-left:0px;
+	position:relative;min-height: 100vh;
+	display: flex;
+	align-items: center
+}
+.form{
+line-height: min-height: 50%;
+background-color:rgba(255,255,255,0.5);
+
+}
+.sidebar{
+	height: 100vh;
+	background-color:rgba(3,3,1);
+}
+h2{
+	color:white;
+}
+.navlist{
+	color:#fff;
+}
+.subtitle{
+	font-style: italic;
+	font-size:19px;
+	color:blue;
+}
+/*estilos generales para el footer*/
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  color: white;
+}
