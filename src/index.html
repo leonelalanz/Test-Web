@@ -1,9 +1,25 @@
-<html>
+<!DOCTYPE html>
+<html ng-app="app">
   <head>
+      <meta content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type" />
     <script src="//localhost:35729/livereload.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    
+    
   </head>
-  <body>
-    <h1> Grunt is running! </h1>
+  <body ng-controller="FirstController">
+    {{'hola: '+ nombre}}
+    <h1> Grunt is running now! </h1>
     <h2> :) </h2>
+
+
+    <!--Angular Develop-->
+    <script type="text/javascript">
+      let app = angular.module('app',[]);
+      app.controller("FirstController",($scope) =>{
+          $scope.nombre = "miguel"
+      });
+      
+    </script>
   </body>
 </html>
