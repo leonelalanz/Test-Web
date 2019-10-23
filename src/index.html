@@ -75,7 +75,7 @@
         }
     </style>
   </head>
-  <body ng-controller="Login as login">
+  <body ng-controller="Login">
     
     <!--HTML DEVELOP-->
 
@@ -84,9 +84,9 @@
           <div class="col-sm-12 p-3">
             <div class="col-sm-10 offset-2 test">
             <h4>Login</h4>
-            <form class="form-horizontal" ng-submit="login.login()" method="post" >
+            <form class="form-horizontal" ng-submit="login()" method="post" >
               <div class="col-sm-5 offset-7 test">
-                <select class="form-control" ng-model="login.tipo" placeholder="Seleccione" required>
+                <select class="form-control" ng-model="tipo" placeholder="Seleccione" required>
                 <option>
                   Seleccione
                 </option>
@@ -101,17 +101,45 @@
                 </option>
               </select>
               </div>
-              <input type="text" ng-model="login.username" placeholder="Usuario" class="form-control login_input">
-              <input type="password" ng-model="login.password"  placeholder="contraseña" class="form-control login_input">
-              <span class="subtitle" id="lostPassword" ng-click="login.lostPassword()"> Olvido su contraseña?</span>
+              <input type="text" ng-model="username" placeholder="Usuario" class="form-control login_input">
+              <input type="password" ng-model="password"  placeholder="contraseña" class="form-control login_input">
+              <span class="subtitle" id="lostPassword" ng-click="lostPassword()"> Olvido su contraseña?</span>
               <div class="col-sm-5 offset-4 test">
-                <button type="submit" class="btn btn-info" ><a href="#">Aceptar</a></button>
+                <button type="submit" class="btn btn-info" >Aceptar</a></button>
               </div>
             </form>
            </div>
           </div>
         </div>
     </div>
+
+    <div ng-view></div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            Datos Incorrectos
+            <button type="button" class="close cerrarModal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            
+          </div>
+          <div class="modal-body">
+            <li ng-show="!username">
+            <span >Usuario</span></li>
+            <li ng-show="!password">
+            <span >Contraseña</span></li>
+            <li ng-show="!tipo">
+            <span >tipo</span></li>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>  <!-- Ends Modal -->
+
+
+
 
     <!--Angular Develop-->
     <script type="text/javascript">
@@ -121,16 +149,16 @@
       app.controller("Login",['$scope', '$http',($scope,$http) =>{
         let login= this;
 
-        $scope.login.username="";
-        $scope.login.password="";
-        $scope.login.tipo="";
+        $scope.username="";
+        $scope.password="";
+        $scope.tipo="";
         //Login View
-        login.login= ()=>{
-            let username= login.username;
-            let password= login.password;
-            let tipo= login.tipo;
+        $scope.login = ()=>{
+            let username= $scope.username;
+            let password= $scope.password;
+            let tipo= $scope.tipo;
             if(username=='' || password=='' || tipo==''){
-                //$('#myModal').modal('show');
+                $('#myModal').modal('show');
                 console.log("error");
             }else{
                // $scope.makePost();
@@ -139,7 +167,7 @@
           }
         
         // Lost password
-        login.lostPassword= function(){
+       $scope.lostPassword= function(){
               alert("Recuperar contraseña");
         }
 
