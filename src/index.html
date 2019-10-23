@@ -1,24 +1,168 @@
 <!DOCTYPE html>
 <html ng-app="app">
   <head>
-      <meta content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="//localhost:35729/livereload.js"></script>
+    <!-- Angular 1.7-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
-    
-    
-  </head>
-  <body ng-controller="FirstController">
-    {{'hola: '+ nombre}}
-    <h1> Grunt is running now! </h1>
-    <h2> :) </h2>
+    <!--Bootrap-->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>
 
+        body{
+          background-image: url("../assets/images/background.jpg"),linear-gradient(to bottom, #ADB2B6, #ABAEB3);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+          background-size: 90% 100%;
+                  -moz-background-size: cover;
+                  -webkit-background-size: 90% 100%;
+                  -o-background-size: cover;
+        }
+        body:before{
+          content:"";
+          width:100%;
+          min-height: 100vh;
+          position:absolute;
+          top:0;
+          left:0;
+          background: linear-gradient(transparent,#fff);
+          opacity: 0.84;
+          display: flex;
+          align-items: center
+        }
+        .login_input{
+          margin-top:10px;
+        }
+        .btn{
+          width:120px;
+          padding:10px;
+        }
+        .login{
+          width:100%;
+          margin-left:0px;
+          position:relative;
+          min-height: 100vh;
+          display: flex;
+          align-items: center
+        }
+        .form{
+        min-height: 50%;
+        background-color:rgba(255,255,255,0.5);
+
+        }
+        .sidebar{
+          height: 100vh;
+          background-color:rgba(3,3,1);
+        }
+        h2{
+          color:white;
+        }
+        .navlist{
+          color:#fff;
+        }
+        .subtitle{
+          font-style: italic;
+          font-size:19px;
+          color:blue;
+        }
+    </style>
+  </head>
+  <body ng-controller="Login as login">
+    
+    <!--HTML DEVELOP-->
+
+    <div class="row login">
+        <div class="form">
+          <div class="col-sm-12 p-3">
+            <div class="col-sm-10 offset-2 test">
+            <h4>Login</h4>
+            <form class="form-horizontal" ng-submit="login.login()" method="post" >
+              <div class="col-sm-5 offset-7 test">
+                <select class="form-control" ng-model="login.tipo" placeholder="Seleccione" required>
+                <option>
+                  Seleccione
+                </option>
+                <option value="V">
+                  V
+                </option>
+                <option vlaue="E">
+                  E
+                </option>
+                <option value="P">
+                  P
+                </option>
+              </select>
+              </div>
+              <input type="text" ng-model="login.username" placeholder="Usuario" class="form-control login_input">
+              <input type="password" ng-model="login.password"  placeholder="contraseña" class="form-control login_input">
+              <span class="subtitle" id="lostPassword" ng-click="login.lostPassword()"> Olvido su contraseña?</span>
+              <div class="col-sm-5 offset-4 test">
+                <button type="submit" class="btn btn-info" ><a href="#">Aceptar</a></button>
+              </div>
+            </form>
+           </div>
+          </div>
+        </div>
+    </div>
 
     <!--Angular Develop-->
     <script type="text/javascript">
-      let app = angular.module('app',[]);
-      app.controller("FirstController",($scope) =>{
-          $scope.nombre = "miguel"
-      });
+      let app = angular.module('app',[]); //Module
+
+      //Login Controller
+      app.controller("Login",['$scope', '$http',($scope,$http) =>{
+        let login= this;
+
+        $scope.login.username="";
+        $scope.login.password="";
+        $scope.login.tipo="";
+        //Login View
+        login.login= ()=>{
+            let username= login.username;
+            let password= login.password;
+            let tipo= login.tipo;
+            if(username=='' || password=='' || tipo==''){
+                //$('#myModal').modal('show');
+                console.log("error");
+            }else{
+               // $scope.makePost();
+               console.log("entro");
+            }
+          }
+        
+        // Lost password
+        login.lostPassword= function(){
+              alert("Recuperar contraseña");
+        }
+
+        //Call webService
+       /* $scope.makePost = ()=>{
+              $http.post('https://prueba-admision-web.herokuapp.com/session', {
+                  "username": login.username,
+                  "password": login.password,
+                  "type": login.tipo
+              })
+              .then((res)=>{
+                  console.log(res);
+              })
+              .catch((err)=>{
+                  console.log(err);
+              })
+        }*/
+        
+        
+
+
+
+      }]);
       
     </script>
   </body>
