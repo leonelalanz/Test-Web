@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/SYNERGY-GB/Test-Web.git"
   },
-  "author": "",
+  "author": "Luis Estrada",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/SYNERGY-GB/Test-Web/issues"
@@ -20,5 +20,9 @@
     "grunt": "^1.0.1",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-watch": "^1.0.0"
+  },
+  "dependencies": {
+    "path": "^0.12.7",
+    "properties-reader": "^0.3.1"
   }
 }

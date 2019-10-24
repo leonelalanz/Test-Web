@@ -1,9 +1,18 @@
-<html>
+<html ng-app="appSinergy">
   <head>
     <script src="//localhost:35729/livereload.js"></script>
+    <title>Test Web Synergy-GB</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.7.8/angular-route.min.js"></script>
+    <script src="https://code.angularjs.org/1.7.8/angular-animate.min.js"></script>
+    <script src="https://code.angularjs.org/1.7.8/angular-touch.min.js"></script>
+    <script src="https://cdn.rawgit.com/angular-ui/bootstrap/gh-pages/ui-bootstrap-tpls-2.5.0.js"></script>
+    <!--<link data-require="bootstrap@3.3.7" data-semver="3.3.7" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link data-require="bootstrap-css@3.*" data-semver="3.3.7" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" /> --->
+    <link rel="stylesheet" href="../assets/css/styles.css" /> 
+    <script src="app.js"></script>
+    <script src="controllers/controllers.js"></script> 
   </head>
-  <body>
-    <h1> Grunt is running! </h1>
-    <h2> :) </h2>
+  <body ng-view>        
   </body>
 </html>

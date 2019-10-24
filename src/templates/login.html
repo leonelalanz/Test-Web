@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//localhost:35729/livereload.js"></script>
+    <title>Login</title>
+</head>
+<body>
+  <div class="session" ng-controller="userController as user">
+      <p>Inicio de Sesión</p>
+      <br>
+      <div class="row-session-drop">
+        <select class="drop-row" ng-model="user.type" name="type" id="type" required>
+              <option value="">Seleccione</option>
+                <option value="V">V</option>
+                <option value="E">E</option>
+                <option value="P">P</option>
+        </select>
+      </div>
+      <div class="row-session-input">
+        <br>
+        <input type="text" placeholder="Usuario" ng-model="user.username" required>
+        <br>
+        <br>
+        <input type="password" placeholder="Contraseña" ng-model="user.password" required>
+      </div>
+      <div class="row-session-label">
+        <label for=""></label>
+        <br>
+        <a href="#" id="resetPassword" ng-click="user.resetPassword()">¿Olvidó su contraseña?</a>
+      </div>
+      <div class="row-session-button">
+        <br>
+        <button class="btn btn-primary" ng-click="user.getLogin()"><i class="fas fa-sign-in-alt"></i>Aceptar</button>
+      </div>
+  </div>
+
+
+
+    <!--<div class="wallpaper" ng-controller="userController as user">
+      <div class="session">
+        <p>Inicio de Sesión</p>
+          <br>
+            <div class="row">
+              <div class="form-login">
+                <div class="form-group">
+                  <select class="form-control" ng-model="user.type" name="type" id="type" required>
+                    <option value="">Seleccione</option>
+                      <option value="V">V</option>
+                      <option value="E">E</option>
+                      <option value="P">P</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <input type="text" placeholder="Usuario" ng-model="user.username" required>
+              <input type="password" placeholder="Contraseña" ng-model="user.password" required>
+              <label for=""></label>
+              <br>
+              <a href="#" id="resetPassword" ng-click="user.resetPassword()">¿Olvidó su contraseña?</a>
+              <div class="text-center">
+                <button class="btn btn-primary" ng-click="user.getLogin()"><i class="fas fa-sign-in-alt"></i>Aceptar</button>
+              </div>
+            </div>
+      </div>
+    </div>   --> 
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//localhost:35729/livereload.js"></script>
+    <title>Timeline</title>
+</head>
+<body>
+    <div id="wallpaper" ng-controller="timelineController as user">
+        <center><table border="1">
+            <caption><center>TIMELINE</center></caption>
+                <tr>
+                    <th colspan="2"><center>Id</center></th>
+                    <th colspan="2"><center>Title</center></th>
+                    <th colspan="2"><center>ThumbnailUrl</center></th>
+                    <th colspan="2"><center>Url</center></th>
+                </tr>
+            <tbody>
+                
+                    <tr ng-repeat="data in user.timelineData.data">
+                    <td colspan="2">{{data.id}}</td>
+                    <td colspan="2">{{data.title}}</td>
+                    <td colspan="2" ><a ng-href="{{data.thumbnailUrl}}">{{data.thumbnailUrl}}</a></td>
+                    <td colspan="2"><a ng-href="{{data.url}}">{{data.url}}</a></td>
+                    </tr>
+                 
+            </tbody>
+        </table></center>
+        <br>
+        <div class="text-center">
+                <button class="btn btn-primary" ng-click="user.logout()"><i class="fas fa-sign-in-alt"></i>Cerrar Sesión</button>
+        </div>
+    </div>  
+</body>
+</html>
