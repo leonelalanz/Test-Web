@@ -8,30 +8,39 @@
     <title>Timeline</title>
 </head>
 <body>
-    <div id="wallpaper" ng-controller="timelineController as user">
-        <center><table border="1">
-            <caption><center>TIMELINE</center></caption>
-                <tr>
-                    <th colspan="2"><center>Id</center></th>
-                    <th colspan="2"><center>Title</center></th>
-                    <th colspan="2"><center>ThumbnailUrl</center></th>
-                    <th colspan="2"><center>Url</center></th>
-                </tr>
-            <tbody>
-                
-                    <tr ng-repeat="data in user.timelineData.data">
-                    <td colspan="2">{{data.id}}</td>
-                    <td colspan="2">{{data.title}}</td>
-                    <td colspan="2" ><a ng-href="{{data.thumbnailUrl}}">{{data.thumbnailUrl}}</a></td>
-                    <td colspan="2"><a ng-href="{{data.url}}">{{data.url}}</a></td>
-                    </tr>
-                 
-            </tbody>
-        </table></center>
-        <br>
-        <div class="text-center">
-                <button class="btn btn-primary" ng-click="user.logout()"><i class="fas fa-sign-in-alt"></i>Cerrar Sesión</button>
-        </div>
+    <div ng-controller="timelineController as user">
+        <div class="container-fluid">
+            <div class="card card-timeline">
+                <div class="card-body card-timeline-body">
+                    <h4 class="card-title card-timeline-body-title">TIMELINE</h4>
+                    <center><table border="1">          
+                        <tr>
+                            <th colspan="2"><center>Id</center></th>
+                            <th colspan="2"><center>Title</center></th>
+                            <th colspan="2"><center>ThumbnailUrl</center></th>
+                            <th colspan="2"><center>Url</center></th>
+                        </tr>
+                        <tbody>   
+                            <tr ng-repeat="data in user.timelineData.data">
+                                <td colspan="2">{{data.id}}</td>
+                                <td colspan="2">{{data.title}}</td>
+                                <td colspan="2" ><a ng-href="{{data.thumbnailUrl}}">{{data.thumbnailUrl}}</a></td>
+                                <td colspan="2"><a ng-href="{{data.url}}">{{data.url}}</a></td>
+                            </tr>
+                        </tbody>
+                    </table></center>
+                    <br>
+                    <div class="text-center">
+                        <button class="btn btn-primary" ng-click="user.logout()"><i class="fas fa-sign-in-alt"></i>Cerrar Sesión</button>
+                    </div>
+                </div>
+            </div>
+        </div>  
     </div>  
 </body>
+<footer>
+    <div class="text-right mt-auto" style="width: 100%">
+        <img src="../assets/images/footer.png">     
+    </div>
+</footer>  
 </html>

@@ -43,7 +43,6 @@ app.controller("userController", function($scope, $http, $uibModal, $location, $
                 })
                 .then(function(response){        
                     if(response){
-                        //console.log(response.data);
                         localStorage.setItem(cid, response.data.cid);
                         if(response.data.status == "ok"){
                             $location.path(urlTimeline);
@@ -137,14 +136,11 @@ app.controller("timelineController", function($scope, $http, $location) {
 
     urlGet = urlGet + localStorage.getItem(cid);
     user.timelineData = null
-    //console.log(urlGet);
 
     $http.get(urlGet)
         .then(function successCallback(data){
-            //console.log(data);
             if(data != undefined && !(JSON.stringify(data)=='{}')){
                 user.timelineData = data;
-                //console.log(user.timelineData.data);
             }else{
                 alert(errorDataIsEmpty);
             }

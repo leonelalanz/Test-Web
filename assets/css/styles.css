@@ -1,6 +1,79 @@
-/*body {
+body {
     background-image: url('../images/background.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
-}*/
+}
+
+.card-session {
+    background: rgba(255, 255, 255, .7);
+    margin-top: 160px;
+    margin-bottom: 40px;
+    margin-right: 985px;
+    margin-left: -15px;
+}
+
+.card-session-body-title{
+    margin-left: 15%;
+}
+
+.row-session-drop{
+    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-left: 107px;
+}
+
+.row-session-drop select::-ms-expand {
+    display: none;
+}
+.row-session-drop select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #333;
+    font-size: 16px;
+    height: 32px;
+    padding-left: 10px;
+    width: 200px;
+    background-image: url('../images/arrow2.jpg');
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.row-session-input{
+    margin-bottom: 15px;
+    margin-top: 5px;
+    width: 100%; 
+    height: 20px;
+}
+
+.row-session-label{
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.row-session-button{
+    margin-left: 35%;
+    width: 400%;
+}
+
+.card-timeline {
+    background: rgba(255, 255, 255, .7);
+    margin-top: 100px;
+    margin-bottom: 40px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.card-timeline-body-title{
+    margin-left: 45%;
+}
+
+.card-session-body-title{
+    margin-left: 3px;
+}
+
+
+.row-session-drop-row{
+    size: 40;
+}
