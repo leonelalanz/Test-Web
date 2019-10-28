@@ -1,25 +1,28 @@
 var app = angular.module("appSinergy");
 
 
-app.controller("userController", function($scope, $http, $uibModal, $location, $rootScope){
+app.controller("userController", function($scope, $http, $uibModal, $location, $rootScope, urlPost,
+    messageType, messageUsername, messagePassword, size, modalController, userThis, templateModal,
+    modalBody, modalTitle, recuperarPassWordMessage, errPostMessage, urlTimeline, cid){
+        
     var user = this;
     var username = "";
     var password = "";
     var type = "";
-    var urlPost = "https://prueba-admision-web.herokuapp.com/session";
-    var messageType = "Debe seleccionar un valor";
-    var messageUsername = "Debe introducir un usuario";
-    var messagePasswword = "Debe introducir una contraseña";  
-    var size = "md";
-    var modalController = "modalController";
-    var userThis = "user";
-    var templateModal = "templates/modal.html";
-    var modalBody = "modal-body";
-    var modalTitle = "modal-title";
-    var recuperarPassWordMessage = "recuperar contraseña";
-    var errPostMessage = "No se pudo realizar la solicitud. Por favor verifique los datos ingresados o intente mas tarde";
-    var urlTimeline = "/timeline";
-    var cid = "cid";
+    var urlPost = urlPost;
+    var messageType = messageType;
+    var messageUsername = messageUsername;
+    var messagePassword = messagePassword;  
+    var size = size;
+    var modalController = modalController;
+    var userThis = userThis;
+    var templateModal = templateModal;
+    var modalBody = modalBody;
+    var modalTitle =  modalTitle;
+    var recuperarPassWordMessage = recuperarPassWordMessage;
+    var errPostMessage = errPostMessage;
+    var urlTimeline = urlTimeline;
+    var cid = cid;
 
     user.message = "";
     localStorage.setItem(cid, "");
@@ -41,7 +44,7 @@ app.controller("userController", function($scope, $http, $uibModal, $location, $
                     password,
                     type
                 })
-                .then(function(response){        
+                .then(function(response){      
                     if(response){
                         localStorage.setItem(cid, response.data.cid);
                         if(response.data.status == "ok"){
@@ -91,7 +94,7 @@ app.controller("userController", function($scope, $http, $uibModal, $location, $
                 });
 
             }else if(password == ""){
-                user.message = messagePasswword;
+                user.message = messagePassword;
 
                 $uibModal.open({
                     animation: false,
@@ -118,6 +121,7 @@ app.controller("userController", function($scope, $http, $uibModal, $location, $
 });
 
 app.controller('modalController', ['$uibModalInstance', 'data', function($uibModalInstance, data) {
+
     var user = this;
     user.message = data;
 
@@ -126,16 +130,18 @@ app.controller('modalController', ['$uibModalInstance', 'data', function($uibMod
     };
 }]);
 
-app.controller("timelineController", function($scope, $http, $location) {
+app.controller("timelineController", function($scope, $http, $location, urlGet, urlLogin, errGetMessage, cid, 
+    errorDataIsEmpty) {
+
     var user = this;
-    var urlGet = "https://prueba-admision-web.herokuapp.com/data?cid=";
-    var urlLogin = "/";
-    var errGetMessage = "No se pudo realizar la solicitud. Por favor intente mas tarde";
-    var cid = "cid";
-    var errorDataIsEmpty = "No se ha podido encontrar los datos de la session. Por favor intente mas tarde";
+    var urlGet = urlGet;
+    var urlLogin = urlLogin;
+    var errGetMessage = errGetMessage;
+    var cid = cid;
+    var errorDataIsEmpty = errorDataIsEmpty;
 
     urlGet = urlGet + localStorage.getItem(cid);
-    user.timelineData = null
+    user.timelineData = null;
 
     $http.get(urlGet)
         .then(function successCallback(data){

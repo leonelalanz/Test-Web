@@ -1,4 +1,4 @@
-var app = angular.module("appSinergy", ["ngRoute", 'ngAnimate','ui.bootstrap']);
+var app = angular.module("appSinergy", ["ngRoute", "ngAnimate", "ngResource","ui.bootstrap"]);
 
 app.config(function($routeProvider){
     $routeProvider
