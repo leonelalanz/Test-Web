@@ -1,9 +1,17 @@
-<html>
+<html ng-app="app">
   <head>
+    <meta charset="utf-8">
+    <title>Test Web</title>
     <script src="//localhost:35729/livereload.js"></script>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../src/styles.css">
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/popperjs.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/angularjs.min.js"></script>
+    <script src="../assets/js/angular-route.min.js"></script>
+    <script src="../src/app.js"></script>
   </head>
-  <body>
-    <h1> Grunt is running! </h1>
-    <h2> :) </h2>
+  <body ng-view="">
   </body>
 </html>

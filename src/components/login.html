@@ -1,0 +1,58 @@
+<div class="container-fluid login">
+  <div class="d-flex align-items-start flex-column full-height">
+    <div class="mb-auto" style="height: 157px"></div>
+    <div class="sign-in-container card">
+      <div class="card-body">
+        <h2 class="card-title">Iniciar Sesión</h2>
+        <form ng-submit="onsubmit()" style="width: 450px" novalidate >
+          <div class="form-group d-flex justify-content-end">
+            <div class="dropdown form-dropdown">
+              <button class="btn btn-md dropdown-toggle" type="button" id="selection" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="dropdown-type-text">{{ form.type || 'Seleccione'}}</span>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="selection">
+                <button type="button" class="dropdown-item" ng-click="selectType('V')">V</button>
+                <button type="button" class="dropdown-item" ng-click="selectType('E')">E</button>
+                <button type="button" class="dropdown-item" ng-click="selectType('P')">P</button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="usuario" placeholder="Usuario" ng-model="form.username">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="password" placeholder="Contraseña" ng-model="form.password">
+          </div>
+          <div class="form-group">
+            <a href="#" ng-click="forgotPassword()">¿Olvidó su contraseña?</a>
+          </div>
+          <div class="form-group text-center">
+            <button class="btn btn-primary">Aceptar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="text-right mt-auto" style="width: 100%">
+      <img src="../../assets/images/logo.png" alt="">
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="loginErrorModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Error al iniciar sesión</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{modalMessage}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
